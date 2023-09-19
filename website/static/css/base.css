@@ -1,0 +1,513 @@
+body {
+  background-color: rgb(242, 250, 242);
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1000px) {
+  html {
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media (min-width: 1000px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(0, 96, 34);
+  }
+}
+
+.Lang-Image {
+  width: 4vw;
+  margin-right: 1vw;
+}
+
+.btn-translate {
+  background-color: rgb(4, 172, 63);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.footer {
+  min-height: 50vw;
+  background-color: #929fba;
+  position: relative;
+}
+
+.footer-container {
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.Grid-col {
+  padding-bottom: 100px;
+}
+
+.Copyright {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+/* navbar configuration */
+
+.navbar {
+  background-size: 100% 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (min-width: 669px) {
+  .navbar {
+    background-size: 100% 100%;
+    min-height: 450px;
+  }
+}
+
+@media (min-width: 1051px) {
+  .navbar {
+    background-size: 100% 100%;
+    min-height: 650px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar {
+    background-size: 100% 100%;
+    min-height: 750px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .navbar {
+    background-size: 100% 100%;
+    min-height: 100vh;
+  }
+}
+
+.logo-buttons {
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center;
+  align-items: flex-start;
+}
+
+.logo-buttons img {
+  display: flex; /* Use flexbox to arrange elements horizontally */
+  align-items: center;
+}
+
+@media (min-width: 200px) {
+  .navbar-brand {
+    max-width: 100px;
+  }
+}
+
+@media (min-width: 500px) {
+  .navbar-brand {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 669px) {
+  .navbar-brand {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1051px) {
+  .navbar-brand {
+    max-width: 250px;
+  }
+}
+
+.navbar-item {
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: 600;
+  color: rgb(227, 248, 227) !important;
+  padding-right: 10px;
+}
+.nav-link {
+  font-size: x-large;
+  font-weight: 600;
+  color: rgb(227, 248, 227) !important;
+}
+
+.content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.titlos {
+  font-weight: 400;
+  color: rgb(22, 200, 78);
+}
+
+@media (min-width: 1011px) {
+  .kimeno {
+    color: #058d21;
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+@media (max-width: 3000px) {
+  .kimeno {
+    color: #058d21;
+    font-weight: 400;
+    font-style: italic;
+    font-size: x-large;
+  }
+}
+
+@media (max-width: 1411px) {
+  .kimeno {
+    color: #058d21;
+    font-weight: 400;
+    font-style: italic;
+    font-size: medium;
+  }
+}
+
+@media (max-width: 1011px) {
+  .kimeno {
+    color: #058d21;
+    font-weight: 400;
+    font-style: italic;
+    font-size: small;
+  }
+}
+
+@media (max-width: 669px) {
+  .kimeno {
+    color: #058d21;
+    font-weight: 400;
+    font-style: italic;
+    font-size: medium;
+  }
+}
+
+.cards-row {
+  background-color: rgb(196, 239, 196);
+}
+
+.CarouselExample {
+  max-width: 70vw;
+}
+
+.carousel-item {
+  max-width: 70vw;
+}
+
+.a-carousel-items {
+  color: aquamarine;
+}
+
+.h-carousel-title {
+  color: aquamarine;
+}
+
+.Katigories h1 {
+  text-align: center;
+  font-weight: 400;
+  color: rgb(22, 200, 78);
+  font-family: var(--bs-font-sans-serif);
+}
+
+.Text-Katigories {
+  text-align: center;
+  font-size: large;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-bottom: 4%;
+}
+
+.Last-text {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 92px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #2c2c2c;
+  background-color: rgb(172, 214, 172);
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 200px) {
+  .Last-text {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 350px) {
+  .Last-text {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 800px) {
+  .Last-text {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .Last-text {
+    font-size: 92px;
+  }
+}
+
+.Info p {
+  color: rgb(227, 248, 227);
+  font-weight: 300;
+  font-family: "CFAstir";
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Styles for buttons */
+.button-group {
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-right: 10px;
+}
+
+/* Styles for images */
+.ImagesForProducts {
+  display: block; /* Show all images by default */
+}
+
+.card-products {
+  padding: 10%;
+}
+
+.button-Products {
+  margin: 0.5%;
+}
+
+@keyframes example {
+  from {
+    display: none;
+  }
+  to {
+    display: inline;
+  }
+}
+
+.showmeonhover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2%;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.heurehover:hover .showmeonhover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2%;
+  transition: opacity 0.6s;
+  opacity: 1;
+}
+
+.heurehover:hover .open {
+  display: none;
+}
+
+.proionta {
+  color: aquamarine;
+  font-weight: bold;
+}
+
+.ds {
+  background-color: black;
+  opacity: 20%;
+}
+
+.Instructions {
+  font-size: large;
+}
+
+.prod-text p {
+  text-align: center;
+}
+
+@media (min-width: 100px) {
+  .prod-text h5 {
+    font-size: small;
+  }
+}
+
+@media (min-width: 100px) {
+  .prod-text p {
+    font-size: x-small;
+  }
+}
+
+@media (min-width: 320px) {
+  .prod-text h5 {
+    font-size: medium;
+  }
+}
+
+@media (min-width: 320px) {
+  .prod-text p {
+    font-size: small;
+  }
+}
+
+@media (min-width: 760px) {
+  .prod-text h5 {
+    font-size: large;
+  }
+}
+
+@media (min-width: 760px) {
+  .prod-text p {
+    font-size: small;
+  }
+}
+
+@media (min-width: 763px) {
+  .prod-text h5 {
+    font-size: small;
+  }
+}
+
+@media (min-width: 763px) {
+  .prod-text p {
+    font-size: x-small;
+  }
+}
+
+@media (min-width: 886px) {
+  .prod-text h5 {
+    font-size: small;
+  }
+}
+
+@media (min-width: 886px) {
+  .prod-text p {
+    font-size: x-small;
+  }
+}
+
+@media (min-width: 1300px) {
+  .prod-text h5 {
+    font-size: large;
+  }
+}
+
+@media (min-width: 1300px) {
+  .prod-text p {
+    font-size: medium;
+  }
+}
+
+.Company-Background-Image::before {
+  content: "";
+  background-image: url("/static/pics/CompanyPage/Company-Background.jpg");
+  background-size: cover;
+  filter: blur(6px); /* Apply a blur effect */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind other content */
+}
+
+.Company-Text {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Black partially transparent background */
+  color: white;
+  font-size: 1.2vw;
+  font-weight: bold;
+  border: 3px solid #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.Company-First-Text {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+    "AppleGothic", sans-serif;
+  font-size: 5vw;
+  padding: 6vw 4vw;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #1b4d1d;
+  background-color: rgb(172, 214, 172);
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 992px) {
+  .ShowTitle {
+    position: absolute;
+    font-size: 4vw;
+    top: 17%;
+    left: 40%;
+    color: #058d21;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 992px) {
+  .ShowTitle {
+    position: absolute;
+    font-size: 4vw;
+    top: 10%;
+    right: 35%;
+    color: #058d21;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 300px) {
+  .ShowTitle {
+    position: absolute;
+    font-size: 4vw;
+    top: 20%;
+    right: 35%;
+    color: #058d21;
+    text-decoration: underline;
+  }
+}
