@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Ψημένα Προϊόντα{% endblock %} {%
+block ShowTitle %}Ψημένα Προϊόντα{% endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="row p-2">
+    <div class="button-group p-1">
+      <button
+        type="button"
+        class="btn button-Products btn-outline-success"
+        onclick="hideOrShowImages('all')">
+        Όλα τα Προϊόντα
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Kritsinia')">
+        Κριτσίνια
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Stick')">
+        Stick
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Krikoi')">
+        Κρίκοι
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Mpatonetes')">
+        Μπατονέτες
+      </button>
+      <!-- Add more buttons for other categories -->
+    </div>
+  </div>
+
+  <div id="imageContainer " data-aos="fade-up" data-aos-duration="3000">
+    <div
+      class="row row-cols-xsm-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 p-3 align-items-stretch">
+      {% for item in PsimenaImage_data %}
+      <div class="col Product_images" id="{{item['categories']}}">
+        <div class="card text-white d-flex flex-column h-100">
+          <img
+            class="flex-fill"
+            src="{{ url_for('static', filename='pics/Psimena/' + item['filename']) }}" />
+
+          <div class="proionta card-img-overlay heurehover">
+            <div class="showmeonhover prod-text w-100">
+              <h5 class="card-title text-center">{{item['onoma']}}</h5>
+              <p class="card-text">{{item['keimeno']|safe}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

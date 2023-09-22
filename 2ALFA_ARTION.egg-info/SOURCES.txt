@@ -1,0 +1,9 @@
+setup.py
+2ALFA_ARTION.egg-info/PKG-INFO
+2ALFA_ARTION.egg-info/SOURCES.txt
+2ALFA_ARTION.egg-info/dependency_links.txt
+2ALFA_ARTION.egg-info/not-zip-safe
+2ALFA_ARTION.egg-info/requires.txt
+2ALFA_ARTION.egg-info/top_level.txt
+website/__init__.py
+website/views.py

@@ -1,0 +1,130 @@
+{% extends "base.html" %} {% block title %}Σφολιάτες{% endblock %} {% block
+ShowTitle %}Σφολιάτες-Κρουασάν{% endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="row p-5 cards-row">
+    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
+      <h1>Οδηγίες Ψησίματος για Σφολιάτες - Χωριάτικο Φύλλο</h1>
+    </div>
+
+    <!--THE HISTORY-->
+    <div
+      class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4"
+      data-aos="fade-left"
+      data-aos-duration="3000">
+      <p
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        class="lh-lg text-center Instructions fst-italic"
+        data-mdb-animation="fade-out ">
+        1. Βγάλτε το προϊόν από την κατάψυξη, αφαιρέστε την συσκευασία και
+        τοποθετήστε σε ταψί.
+      </p>
+      <p
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        data-aos-delay="200"
+        class="lh-lg text-center Instructions fst-italic"
+        data-mdb-animation="fade-out ">
+        2. Αφήστε να ξεπαγώσει (προαιρετικά) σε θερμοκρασία δωματίου.
+      </p>
+      <p
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        data-aos-delay="400"
+        class="lh-lg text-center Instructions fst-italic"
+        data-mdb-animation="fade-out ">
+        3. Προθερμάνετε τον φούρνο στους 200°C.
+      </p>
+      <p
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        data-aos-delay="600"
+        class="lh-lg text-center Instructions fst-italic"
+        data-mdb-animation="fade-out ">
+        4. Τοποθετήστε το προϊον στον φούρνο.
+      </p>
+      <p
+        data-aos="fade-left"
+        data-aos-duration="3000"
+        data-aos-delay="800"
+        class="lh-lg text-center Instructions fst-italic"
+        data-mdb-animation="fade-out ">
+        5. Ψήστε στους 200°C για 20′-25′ εως ότου να ροδοκοκκινίσει.
+      </p>
+    </div>
+  </div>
+  <div class="row p-2">
+    <div class="button-group p-1">
+      <button
+        type="button"
+        class="btn button-Products btn-outline-success"
+        onclick="hideOrShowImages('all')">
+        Όλα τα Προϊόντα
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Sfoliates')">
+        Σφολιάτες
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Mini-Sfoliates')">
+        Μίνι Σφολιάτες
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Sfoliates-olikis')">
+        Σφολιάτες Ολικής Άλεσης
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Zymes-Krouasan')">
+        Ζύμες Κρουασάν
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Sfoliates-Strobilies')">
+        Σφολιάτες Στροβιλιές
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Patites')">
+        Πατητές
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('Zymes-ZymesBrioche')">
+        Ζύμες & Ζύμες Brioche
+      </button>
+      <button
+        class="button button-Products btn btn-outline-success"
+        onclick="hideOrShowImages('ZymesKourou-Polyspores')">
+        Ζύμες Κουρού & Πολύσπορες
+      </button>
+      <!-- Add more buttons for other categories -->
+    </div>
+  </div>
+
+  <div id="imageContainer " data-aos="fade-up" data-aos-duration="3000">
+    <div
+      class="row row-cols-xsm-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 p-3 align-items-stretch">
+      {% for item in SfoliataImage_data %}
+      <div class="col Product_images" id="{{item['categories']}}">
+        <div class="card text-white d-flex flex-column h-100">
+          <img
+            class="flex-fill"
+            src="{{ url_for('static', filename='pics/Sfoliata/' + item['filename']) }}" />
+
+          <div class="proionta card-img-overlay heurehover">
+            <div class="showmeonhover prod-text w-100">
+              <h5 class="card-title text-center">{{item['onoma']}}</h5>
+              <p class="card-text">{{item['keimeno']|safe}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

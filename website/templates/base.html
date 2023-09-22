@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/base.css') }}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.0/css/all.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en&tl=el"></script>
+
+    <title>{% block title %}Home{% endblock %}</title>
+  </head>
+  <body>
+    <!-- <div id="google_translate_element"></div> -->
+    <!--navigation bar-->
+    <div class="">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="background-image: url('static/pics/Nav-Background.jpg')">
+        <!--Logo-->
+        <div class="container-fluid logo-buttons">
+          <a class="navbar-brand" id="logo" href="/">
+            <img
+              class="img-fluid"
+              src="{{ url_for('static', filename='pics/Thumbnail.png') }}" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+              <li class="nav-items">
+                <a class="navbar-item" id="home" href="/">Home</a>
+                <!-- <a class="navbar-item" id="logout" href="/logout">Logout</a> -->
+                <a class="navbar-item" id="home" href="/Company"
+                  >Η Εταιρία Μας</a
+                >
+              </li>
+
+              <li class="navbar-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Κατηγορίες
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="/Pites">Προϊόντα Φύλλου</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/Sfoliata"
+                      >Προϊόντα Σφολιάτα-Κρουασάν & Ζύμης</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/Psimena"
+                      >Ψημένα Προϊόντα Αρτοποιϊας</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- GOOGLE TRANSLATE API -->
+              <li class="navbar-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img
+                    class="btn-translate"
+                    src="{{ url_for('static', filename='pics/globe.svg') }}" />
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item">
+                      <div id="google_translate_element"></div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ShowTitle">{% block ShowTitle %}Home{% endblock %}</div>
+      </nav>
+    </div>
+    <!-- flash messages on top af the screen -->
+    {% with messages =get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div
+      class="alert d-flex justify-content-between alert-danger alter-dismissable fade show"
+      role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        S
+        aria-label="Close"
+        data-bs-dismiss="alert"></button>
+    </div>
+    {% else %}
+    <div
+      class="alert d-flex justify-content-between alert-success alter-dismissable fade show"
+      role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        data-bs-dismiss="alert"></button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    <div class="content">{% block content %} {% endblock %}</div>
+
+    <!--container class-->
+
+    <!--FOOTER-->
+
+    <div class="footer text-center text-lg-start text-white">
+      <!-- Grid container -->
+      <div class="container footer-container">
+        <!-- Section: Links -->
+        <section data-aos="fade-up" data-aos-duration="3000">
+          <div class="row Info">
+            <p class="text-decoration-underline">Περισσότερες Πληροφορίες</p>
+          </div>
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">2ΑΛΦΑ-ΑΡΤΙΟΝ</h6>
+              <p>
+                Με πάθος για την ποιότητα και παράδοση από γενιά σε γενιά,
+                είμαστε μια επιχείρηση που προσφέρει τα πιο νόστιμα προϊόντα για
+                την επιχειρησή σας. Ευχαριστούμε που είστε μέρος του ταξιδιού
+                μας!
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Προϊόντα</h6>
+              <p>
+                <a href="/Pites" class="text-white">Προϊόντα Φύλλου</a>
+              </p>
+              <p>
+                <a class="text-white">Προϊόντα Σφολιάτα-Κρουασάν & Ζύμης</a>
+              </p>
+              <p>
+                <a class="text-white">Ψημένα Προϊόντα Αρτοποιϊας</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p>
+                <i class="fas fa-home mr-3"></i> ΒΙΠΕΘ Σίνδου, Θεσσαλονίκη, τ.κ
+                570 22
+              </p>
+              <p><i class="fas fa-envelope mr-3"></i> info@2alfa.gr</p>
+              <p><i class="fas fa-phone mr-3"></i> + 30 2310 723 135</p>
+              <p><i class="fas fa-print mr-3"></i> + 30 2310 723136</p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="Grid-col col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+
+              <!-- Facebook -->
+              <!-- <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #3b5998"
+                href="#!"
+                role="button"
+                ><i class="fa-brands fa-facebook"></i
+              ></a> -->
+
+              <!-- Twitter -->
+              <!-- <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #55acee"
+                href="#!"
+                role="button"
+                ><i class="fab fa-twitter"></i
+              ></a> -->
+
+              <!-- Instagram -->
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #ac2bac"
+                href="https://www.instagram.com/2alfa_artion"
+                role="button"
+                ><i class="fab fa-instagram"></i
+              ></a>
+
+              <!-- Google -->
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #dd4b39"
+                href="#!"
+                role="button"
+                ><i class="fab fa-google"></i
+              ></a>
+
+              <!-- Linkedin -->
+              <!-- <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #0082ca"
+                href="#!"
+                role="button"
+                ><i class="fab fa-linkedin-in"></i
+              ></a> -->
+              <!-- Github -->
+              <!-- <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #333333"
+                href="#!"
+                role="button"
+                ><i class="fab fa-github"></i
+              ></a> -->
+            </div>
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="Copyright text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >Kontos Konstantinos</a
+        >
+      </div>
+      <!-- Copyright -->
+    </div>
+    <!-- Footer -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+
+    {% block javascript %}
+    <script type="text/javascript">
+      function deleteNote(noteId) {
+        fetch("/delete-note", {
+          method: "POST",
+          body: JSON.stringify({ noteId: noteId }),
+        }).then((_res) => {
+          window.location.href = "/";
+        });
+      }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      function hideOrShowImages(category) {
+        // Get all images with class "Product_images"
+        const images = document.querySelectorAll(".Product_images");
+
+        // Loop through all images and hide/show them based on the category
+        images.forEach((image) => {
+          const imageCategory = image.id;
+
+          if (category === "all" || category === imageCategory) {
+            image.style.display = "block"; // Show images in the selected category or 'all'
+          } else {
+            image.style.display = "none"; // Hide images in other categories
+          }
+        });
+        AOS.refresh();
+      }
+    </script>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "el", // Set the default display language to English
+            autoDisplay: false, // We'll manually trigger the translation
+            includedLanguages: "el,fr,en,bg,it,de",
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    {% endblock %}
+  </body>
+</html>
