@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block title %}Company{% endblock %} {% block
+ShowTitle %}Η Εταιρία{% endblock %} {% block content %}
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo left"
+      >{% block page %}Store App{% endblock %}</a
+    >
+  </div>
+</nav>
+<form>
+  <div class="container">
+    <div class="input-field">
+      <input name="text" />
+      <button class="btn right" type="submit" value="search">Search</button>
+    </div>
+  </div>
+</form>
+<div>
+  <div
+    class="row left"
+    style="width: 45%; height: 80vh; overflow-y: scroll; float: left">
+    <div class="col s12 m6">
+      <main id="media" class="darken-4 white-text">
+        <section id="media-list">
+          {% for product in products %}
+          <div class="card" style="width: 80vh" id="card4">
+            <div class="card-content black-text">
+              <img
+                src="{{ product.image }}"
+                alt=""
+                width="200px"
+                height="200px" />
+              <p>Name: {{product.name}}</p>
+              <p>Price: {{product.price}}</p>
+              <button type="submit" class="right">Add</button>
+            </div>
+          </div>
+          {% endfor %}
+        </section>
+      </main>
+    </div>
+  </div>
+  <div
+    class="row right"
+    style="width: 50%; height: 80vh; overflow-y: scroll; float: right">
+    <div class="col s12 m6">
+      <main id="media" class="darken-4 white-text">
+        <section id="media-list">
+          <table class="table table-striped">
+            <tr>
+              <th>name</th>
+              <th>quantity</th>
+              <th>price</th>
+              <th>total</th>
+            </tr>
+          </table>
+          <h3>Total:</h3>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

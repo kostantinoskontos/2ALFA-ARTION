@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Note
+from .models import Note,Product, Cart
 from . import db
 import json
 
@@ -170,3 +170,17 @@ def Psimena():
         
     ]
     return render_template("Psimena.html", user=current_user, PsimenaImage_data=PsimenaImage_data)
+
+@views.route('/Cart' )
+@login_required
+def Cart():
+    name = request.args.get('text')
+    if name:
+      products = Product.query.filter(
+          Product.name.like( '%'+name+'%' )
+        | Product.about.like( '%'+name+'%' )
+        | Product.category.like( '%'+name+'%' )
+    )
+    else:
+      products = Product.query.all()
+    return render_template("Cart.html", user=current_user, products=products)
