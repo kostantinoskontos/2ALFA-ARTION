@@ -212,14 +212,6 @@ html {
   background-color: rgb(196, 239, 196);
 }
 
-.CarouselExample {
-  max-width: 70vw;
-}
-
-.carousel-item {
-  max-width: 70vw;
-}
-
 .a-carousel-items {
   color: aquamarine;
 }
@@ -494,7 +486,7 @@ html {
   .ShowTitle {
     position: absolute;
     font-size: 4vw;
-    top: 10%;
+    top: 14%;
     right: 35%;
     color: #058d21;
     text-decoration: underline;
@@ -505,7 +497,7 @@ html {
   .ShowTitle {
     position: absolute;
     font-size: 4vw;
-    top: 20%;
+    top: 17%;
     right: 35%;
     color: #058d21;
     text-decoration: underline;
