@@ -60,12 +60,6 @@ def Pites():
             "keimeno": "Βάρος ανά τεμάχιο: 2400gr",
         },
         {
-            "filename": "mpoukitsa-praso-tyri.jpg",
-            "categories": "mpoukitsa",
-            "onoma": "01-01-105 Χωριάτικη Πράσο Τυρί Μπουκίτσα",
-            "keimeno": "Βάρος ανά τεμάχιο: 2400gr",
-        },
-        {
             "filename": "mpoukitsa-kolokithi.jpg",
             "categories": "mpoukitsa",
             "onoma": "01-01-106 Χωριάτικη Κολοκύθι Μπουκίτσα",
@@ -212,8 +206,14 @@ def Pites():
         {
             "filename": "agioritikes-kotopita.jpg",
             "categories": "agioritikes",
-            "onoma": "01-05-155 Χωριάτικη Αγιορείτικη Κοτόπιτα",
+            "onoma": "01-01-455 Χωριάτικη Αγιορείτικη Κοτόπιτα",
             "keimeno": "Βάρος ανά τεμάχιο: 850gr",
+        },
+        {
+            "filename": "mpougatsa-krema.jpg",
+            "categories": "mpougatsa",
+            "onoma": "00-00-000 Μπουγάτσα Κρέμα",
+            "keimeno": "Βάρος ανά τεμάχιο: 1000gr",
         },
         {
             "filename": "mpougatsakia-krema.jpg",
@@ -267,12 +267,6 @@ def Pites():
             "filename": "strifti-spanaki-tyri.jpg",
             "categories": "strifti",
             "onoma": "01-02-102 Στριφτή Σπανάκι Τυρί",
-            "keimeno": "Βάρος ανά τεμάχιο: 220gr",
-        },
-        {
-            "filename": "strifti-ntomata-elia.jpg",
-            "categories": "strifti",
-            "onoma": "01-02-103 Στριφτή Ντομάτα Ελιά",
             "keimeno": "Βάρος ανά τεμάχιο: 220gr",
         },
         {
