@@ -188,7 +188,7 @@ def Pites():
         {
             "filename": "agioritikes-kotopita.jpg",
             "categories": "agioritikes",
-            "onoma": "01-05-152 Χωριάτικη Αγιορείτικη Σπανάκι Τυρί",
+            "onoma": "01-05-163 Χωριάτικη Αγιορείτικη Σπανάκι Τυρί",
             "keimeno": "Βάρος ανά τεμάχιο: 850gr",
         },
         {
@@ -212,9 +212,15 @@ def Pites():
         {
             "filename": "mpougatsa-krema.jpg",
             "categories": "mpougatsa",
-            "onoma": "00-00-000 Μπουγάτσα Κρέμα",
+            "onoma": "01-02-001 Μπουγάτσα Κρέμα",
             "keimeno": "Βάρος ανά τεμάχιο: 1000gr",
         },
+        # {
+        #     "filename": "mpougatsa-tyri.jpg",
+        #     "categories": "mpougatsa",
+        #     "onoma": "01-02-002 Μπουγάτσα Τυρί",
+        #     "keimeno": "Βάρος ανά τεμάχιο: 1000gr",
+        # },
         {
             "filename": "mpougatsakia-krema.jpg",
             "categories": "mpougatsakia",
@@ -252,6 +258,12 @@ def Pites():
             "keimeno": "Βάρος ανά τεμάχιο: 250gr",
         },
         {
+            "filename": "fakelos-manitarion.jpg",
+            "categories": "fakelos",
+            "onoma": "01-02-054 Φάκελος Λαχανικών",
+            "keimeno": "Βάρος ανά τεμάχιο: 250gr",
+        },
+        {
             "filename": "strifti-tyri.jpg",
             "categories": "strifti",
             "onoma": "01-02-100 Στριφτή Τυρί",
@@ -267,6 +279,18 @@ def Pites():
             "filename": "strifti-spanaki-tyri.jpg",
             "categories": "strifti",
             "onoma": "01-02-102 Στριφτή Σπανάκι Τυρί",
+            "keimeno": "Βάρος ανά τεμάχιο: 220gr",
+        },
+        {
+            "filename": "strifti-spanaki-tyri.jpg",
+            "categories": "strifti",
+            "onoma": "01-02-105 Στριφτή Ζαμπόν Κασέρι",
+            "keimeno": "Βάρος ανά τεμάχιο: 220gr",
+        },
+        {
+            "filename": "strifti-spanaki-tyri.jpg",
+            "categories": "strifti",
+            "onoma": "01-02-104 Στριφτή Κρέμα",
             "keimeno": "Βάρος ανά τεμάχιο: 220gr",
         },
         {
