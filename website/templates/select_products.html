@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}Products{% endblock %} {% block
+ShowTitle %}Products To Select{% endblock %} {% block content %}
+<div
+  id="imageContainer"
+  name="dsdsdsd"
+  data-aos="fade-up"
+  data-aos-duration="3000">
+  <div
+    class="row row-cols-xsm-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 p-3 align-items-stretch">
+    {% for product in products %}
+    <div class="col Product_images" id="{{product.Bcategory}}">
+      <div class="card text-white d-flex flex-column h-100">
+        <img
+          class="flex-fill"
+          src="/static/{{ product.id }}.JPG"
+          class="card-img-top"
+          alt="..." />
+
+        <div class="proionta card-img-overlay heurehover">
+          <div class="showmeonhover prod-text w-100">
+            <h5 class="card-title text-center">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <div id="addToCart">
+              <a href="/addToCart/{{product.id}}">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -106,6 +106,14 @@ html {
     min-height: 100vh;
   }
 }
+#goog-gt-tt {
+  display: flex;
+  visibility: visible;
+}
+
+.dropdown-item a {
+  size: 100% 100%;
+}
 
 .logo-buttons {
   display: flex; /* Use flexbox to arrange elements horizontally */
@@ -510,4 +518,19 @@ html {
     color: #058d21;
     text-decoration: underline;
   }
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(87, 189, 96),
+    rgb(24, 198, 76)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(164, 208, 167), rgb(67, 182, 102));
 }

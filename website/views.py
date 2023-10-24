@@ -1,10 +1,17 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Note,Product, Cart
+from .models import Note, Products, Cart, User
 from . import db
 import json
 
 views = Blueprint('views', __name__)
+
+def getLoginDetails():
+    if current_user.is_authenticated:
+        noOfItems = Cart.query.filter_by(buyer=current_user).count()
+    else:
+        noOfItems = 0
+    return noOfItems
 
 @views.route('/', methods=['GET', 'POST'])
 @login_required
@@ -171,16 +178,58 @@ def Psimena():
     ]
     return render_template("Psimena.html", user=current_user, PsimenaImage_data=PsimenaImage_data)
 
-@views.route('/Cart' )
+
+@views.route("/addToCart/<int:product_id>")
 @login_required
-def Cart():
-    name = request.args.get('text')
-    if name:
-      products = Product.query.filter(
-          Product.name.like( '%'+name+'%' )
-        | Product.about.like( '%'+name+'%' )
-        | Product.category.like( '%'+name+'%' )
-    )
+def addToCart(product_id):
+    # check if product is already in cart
+    row = Cart.query.filter_by(product_id=product_id, buyer=current_user).first()
+    if row:
+        # if in cart update quantity : +1
+        row.quantity += 1
+        db.session.commit()
+        flash('This item is already in your cart, 1 quantity added!', 'success')
+        
+        # if not, add item to cart
     else:
-      products = Product.query.all()
-    return render_template("Cart.html", user=current_user, products=products)
+        user = User.query.get(current_user.id)
+        user.add_to_cart(product_id)
+    return redirect(url_for('views.select_products'))
+
+
+@views.route("/Cart", methods=["GET", "POST"])
+@login_required
+def cart():
+    noOfItems = getLoginDetails()
+    # display items in cart
+    cart = Products.query.join(Cart).add_columns(Cart.quantity, Products.price, Products.name, Products.id).filter_by(buyer=current_user).all()
+    subtotal = 0
+    for item in cart:
+        subtotal+=int(item.price)*int(item.quantity)
+
+    if request.method == "POST":
+        qty = request.form.get("qty")
+        idpd = request.form.get("idpd")
+        cartitem = Cart.query.filter_by(product_id=idpd).first()
+        cartitem.quantity = qty
+        db.session.commit()
+        cart = Products.query.join(Cart).add_columns(Cart.quantity, Products.price, Products.name, Products.id).filter_by(buyer=current_user).all()
+        subtotal = 0
+        for item in cart:
+            subtotal+=int(item.price)*int(item.quantity)
+    return render_template('Cart.html', cart=cart, noOfItems=noOfItems, subtotal=subtotal)
+
+@views.route("/removeFromCart/<int:product_id>")
+@login_required
+def removeFromCart(product_id):
+    item_to_remove = Cart.query.filter_by(product_id=product_id, buyer=current_user).first()
+    db.session.delete(item_to_remove)
+    db.session.commit()
+    flash('Your item has been removed from your cart!', 'success')
+    return redirect(url_for('views.cart'))
+
+@views.route("/select_products", methods=['GET', 'POST'])
+def select_products():
+    noOfItems = getLoginDetails()
+    products = Products.query.all()
+    return render_template('select_products.html', products=products,noOfItems=noOfItems)
